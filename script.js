@@ -6,7 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
 function showSection(id) {
     document.querySelectorAll(".challenge").forEach(sec => sec.style.display = "none");
     document.getElementById(id).style.display = "block";
+    localStorage.setItem("currentSection", id); // Save last visited section
 }
+
+// Show the first section when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    loadChallenges();
+    updateEarnedLetters();
+
+    // Load last visited section (or default to quiz)
+    const lastSection = localStorage.getItem("currentSection") || "quiz";
+    showSection(lastSection);
+});
+
 
 function loadChallenges() {
     loadQuiz();
