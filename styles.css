@@ -36,6 +36,21 @@ nav ul li a {
     background: #222;
 }
 
+.draggable {
+    padding: 10px;
+    margin: 5px;
+    background: #0ff;
+    color: #000;
+    cursor: grab;
+}
+
+.dropzone {
+    border: 2px dashed #0ff;
+    padding: 15px;
+    margin: 10px;
+    min-height: 50px;
+}
+
 footer {
     margin-top: 20px;
     background-color: #1e1e1e;
