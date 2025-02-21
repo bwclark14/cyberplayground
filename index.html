@@ -11,46 +11,56 @@
         <h1>Cyber Security Challenges</h1>
         <nav>
             <ul>
-                <li><a href="#quiz">Quiz</a></li>
-                <li><a href="#password">Password</a></li>
-                <li><a href="#decoder">Decoder</a></li>
-                <li><a href="#metadata">Metadata</a></li>
-                <li><a href="#matching">Matching</a></li>
+                <li><a href="#" onclick="showSection('quiz')">Quiz</a></li>
+                <li><a href="#" onclick="showSection('password')">Password</a></li>
+                <li><a href="#" onclick="showSection('decoder')">Decoder</a></li>
+                <li><a href="#" onclick="showSection('metadata')">Metadata</a></li>
+                <li><a href="#" onclick="showSection('dragdrop')">Match Terms</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="quiz">
-            <h2>Quiz Challenge</h2>
+        <section id="quiz" class="challenge">
+            <h2>Cyber Security Quiz</h2>
             <div id="quiz-container"></div>
+            <button onclick="checkQuiz()">Submit Quiz</button>
+            <p id="quiz-result"></p>
         </section>
 
-        <section id="password">
+        <section id="password" class="challenge">
             <h2>Password Challenge</h2>
             <div id="password-container"></div>
+            <button onclick="checkPasswords()">Submit Passwords</button>
+            <p id="password-result"></p>
         </section>
 
-        <section id="decoder">
+        <section id="decoder" class="challenge">
             <h2>Decoder Challenge</h2>
             <div id="decoder-container"></div>
+            <button onclick="checkDecoder()">Submit Answers</button>
+            <p id="decoder-result"></p>
         </section>
 
-        <section id="metadata">
+        <section id="metadata" class="challenge">
             <h2>Metadata Challenge</h2>
             <div id="metadata-container"></div>
         </section>
 
-        <section id="matching">
-            <h2>Matching Game</h2>
-            <div id="matching-container"></div>
-        </section>
-
-        <section id="reward">
-            <h2>Your Reward</h2>
-            <p id="reward-text">Collect all letters to reveal the final word!</p>
+        <section id="dragdrop" class="challenge">
+            <h2>Match Cyber Terms</h2>
+            <div id="dragdrop-container">
+                <div id="terms"></div>
+                <div id="definitions"></div>
+            </div>
+            <button onclick="checkMatching()">Check Answers</button>
+            <p id="dragdrop-result"></p>
         </section>
     </main>
+
+    <footer>
+        <p>Earned Letters: <span id="earned-letters"></span></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
