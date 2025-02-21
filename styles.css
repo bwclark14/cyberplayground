@@ -29,17 +29,18 @@ nav ul li a {
 }
 
 .challenge {
-    display: none; /* Hide all by default */
+    display: none; /* Hide all sections initially */
     margin: 20px;
     padding: 20px;
     border: 1px solid #0ff;
     background: #222;
 }
 
-/* Show the first challenge by default */
-.challenge:first-of-type {
+/* Ensure the first challenge (Quiz) is visible by default */
+#quiz {
     display: block;
 }
+
 
 .draggable {
     padding: 10px;
