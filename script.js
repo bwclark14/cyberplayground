@@ -1,23 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
     loadChallenges();
     updateEarnedLetters();
-});
 
-function showSection(id) {
-    document.querySelectorAll(".challenge").forEach(sec => sec.style.display = "none");
-    document.getElementById(id).style.display = "block";
-    localStorage.setItem("currentSection", id); // Save last visited section
-}
-
-// Show the first section when the page loads
-document.addEventListener("DOMContentLoaded", function() {
-    loadChallenges();
-    updateEarnedLetters();
-
-    // Load last visited section (or default to quiz)
+    // Load the last visited section (or default to quiz)
     const lastSection = localStorage.getItem("currentSection") || "quiz";
     showSection(lastSection);
 });
+
+function showSection(id) {
+    // Hide all sections
+    document.querySelectorAll(".challenge").forEach(section => {
+        section.style.display = "none";
+    });
+
+    // Show the selected section
+    const selectedSection = document.getElementById(id);
+    if (selectedSection) {
+        selectedSection.style.display = "block";
+    }
+
+    // Save the last visited section in localStorage
+    localStorage.setItem("currentSection", id);
+}
+
 
 
 function loadChallenges() {
